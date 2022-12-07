@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html><meta charset="UTF=8"><body>
+	<textarea id="tbox" rows="5" cols="60"></textarea>
+	<script type="text/javascript">
+	// textareaのオフジェクトを取得
+	const tbox = document.getElementById('tbox')
+	// すでにテキストが保存されていれば復元
+	if (localStorage['tbox']){
+		tbox.value = localStorage['tbox']
+	}
+	// キーが押されたときにテキストを保存
+	tbox.onkeydown = function (e) {
+		localStorage['tbox'] = tbox.value
+	}
+	</script>
+</body></html>

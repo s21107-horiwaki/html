@@ -1,0 +1,17 @@
+{# レイアウトを継承する ---(※１) #}
+{% extends "layout.html" %}
+
+{# titleのブロックを書き換える ---(※２) #}
+{% block title %}
+ユーザーリスト
+{% endblock %}
+
+{# contentsのブロックを書き換える --- (※３) #}
+{% block contents %}
+	{% for user in users %}
+		<div class="user">
+			<h3>{{ user.name }}</h3>
+			<p>年齢は、{{ user.age }}歳です。</p>
+		</div>
+	{% endfor %}
+{% endblock %}
